@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | STACK³ 3D</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="vibrant-mode">
+
+
+    <!-- Particle animation and custom cursor -->
+    <canvas id="gravity-canvas"></canvas>
+    
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation bar -->
+    <nav class="floating-pill-nav">
+        <a href="index.html" class="pill-logo">
+            <div class="logo-icon-box"><span class="wave-shape"></span></div>
+            <span class="logo-text">STACK³</span>
+        </a>
+
+        <ul class="pill-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+
+        <div class="pill-cta">
+            <a href="checkout.html" class="btn-ghost">Let's Talk 👤</a>
+        </div>
+
+        <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Main content area -->
+    <main class="scroll-container">
+        
+        <!-- Digital design services -->
+        <section class="fullscreen-section pink-theme">
+            
+            <div class="technical-grid">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+            </div>
+
+            <div class="big-text-layer">
+                <span class="text-left">DIGIT</span>
+                <span class="text-right">ESIGN</span>
+            </div>
+
+            <div class="content-layer">
+                <div class="header-info">
+                    <h1>Included in Subscription</h1>
+                    <div class="big-number">01</div>
+                </div>
+
+                <div class="center-visual">
+                    <div class="floating-obj visual-brand"></div>
+                </div>
+
+                <div class="five-col-grid">
+                    <div class="grid-column">
+                        <a href="#" class="service-link" onclick="addToCart('srv-id', 1200); return false;">
+                            <div class="icon-circle">→</div><span>Identity</span>
+                        </a>
+                        <a href="#" class="service-link" onclick="addToCart('srv-ux', 850); return false;">
+                            <div class="icon-circle">→</div><span>UX/UI Design</span>
+                        </a>
+                    </div>
+
+                    <div class="grid-column">
+                        <a href="#" class="service-link" onclick="addToCart('srv-app', 900); return false;">
+                            <div class="icon-circle">→</div><span>App Design</span>
+                        </a>
+                        <a href="#" class="service-link" onclick="addToCart('srv-web', 900); return false;">
+                            <div class="icon-circle">→</div><span>Web Design</span>
+                        </a>
+                    </div>
+
+                    <div class="grid-column">
+                        <a href="#" class="service-link" onclick="addToCart('srv-ani', 400); return false;">
+                            <div class="icon-circle">→</div><span>Animation</span>
+                        </a>
+                        <a href="#" class="service-link" onclick="addToCart('srv-3d', 500); return false;">
+                            <div class="icon-circle">→</div><span>3D</span>
+                        </a>
+                    </div>
+
+                    <div class="grid-column">
+                        <a href="#" class="service-link" onclick="addToCart('srv-ill', 300); return false;">
+                            <div class="icon-circle">→</div><span>Illustration</span>
+                        </a>
+                        <a href="#" class="service-link" onclick="addToCart('srv-pre', 250); return false;">
+                            <div class="icon-circle">→</div><span>Presentation</span>
+                        </a>
+                    </div>
+
+                    <div class="grid-column">
+                        <a href="#" class="service-link" onclick="addToCart('srv-soc', 150); return false;">
+                            <div class="icon-circle">→</div><span>Social Media</span>
+                        </a>
+                        <a href="#" class="service-link" onclick="addToCart('srv-mvp', 1000); return false;">
+                            <div class="icon-circle">→</div><span>MVP Design</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="fullscreen-section black-theme">
+            
+            <div class="technical-grid">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+            </div>
+
+            <div class="big-text-layer">
+                <span class="text-left">DEV</span>
+                <span class="text-right">COPY</span>
+            </div>
+
+            <div class="content-layer">
+                <div class="header-info">
+                    <h1>Not included, discussable</h1>
+                    <div class="big-number">02</div>
+                </div>
+
+                <div class="center-visual">
+                    <div class="floating-obj visual-motion"></div>
+                </div>
+
+                <div class="five-col-grid text-only-grid">
+                    <div class="grid-column">
+                        <span class="list-item">Webflow</span>
+                        <span class="list-item">React</span>
+                    </div>
+                    <div class="grid-column">
+                        <span class="list-item">HTML/CSS</span>
+                        <span class="list-item">Node.js/TS</span>
+                    </div>
+                    <div class="grid-column">
+                        <span class="list-item">Content Design</span>
+                        <span class="list-item">Creative Writing</span>
+                    </div>
+                    <div class="grid-column">
+                        <span class="list-item">PR & Comms</span>
+                        <span class="list-item">Marketing</span>
+                    </div>
+                    <div class="grid-column">
+                        <span class="list-item">SEO</span>
+                        <span class="list-item">Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="theme-control fixed-bottom-left">
+        <div class="theme-label" id="theme-text">Dark Mode</div>
+        <button id="theme-knob" class="knob-switch"><div class="knob-indicator"></div></button>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>    

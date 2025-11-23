@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works | STACK³ 3D</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="black-theme">
+
+
+    <!-- Particle animation and cursor -->
+    <canvas id="gravity-canvas"></canvas>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation bar -->
+    <nav class="floating-pill-nav glass-effect">
+        <a href="index.html" class="pill-logo">
+            <div class="logo-icon-box"><span class="wave-shape"></span></div>
+            <span class="logo-text">STACK³</span>
+        </a>
+        <ul class="pill-links desktop-only">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="works.html" class="active">Works</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+        <div class="pill-cta">
+            <a href="checkout.html" class="btn-ghost">Let's Talk 👤</a>
+        </div>
+        <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Portfolio and works page -->
+    <main class="works-wrapper">
+        
+        <div class="technical-grid fixed-grid">
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+            <div class="grid-line"></div>
+        </div>
+
+        <!-- Page header and filters -->
+        <header class="works-header">
+            <div class="big-text-layer" style="position:relative; top:0; transform:none; left:0; width:100%; justify-content:center; margin-bottom: 40px;">
+                <span style="font-size: 10vw; text-shadow: 0 0 30px rgba(255,255,255,0.1);">SELECTED</span>
+                <span style="font-size: 10vw; color: var(--primary-orange);">WORKS</span>
+            </div>
+            
+            <div class="filter-container glass-panel">
+                <button class="filter-btn active" onclick="filterWorks('all')">All</button>
+                <button class="filter-btn" onclick="filterWorks('web')">Web Design</button>
+                <button class="filter-btn" onclick="filterWorks('3d')">3D & Motion</button>
+                <button class="filter-btn" onclick="filterWorks('branding')">Branding</button>
+            </div>
+        </header>
+
+        <!-- Portfolio items grid -->
+        <section class="portfolio-grid" id="portfolio-grid">
+            
+            <div class="work-card span-2 category-web" onclick="viewCaseStudy('Project Alpha')">
+                <div class="work-image" style="background-image: url('../Assets/12.jpeg');"></div>
+                <div class="work-overlay">
+                    <div class="work-info">
+                        <h3>FinTech Dashboard</h3>
+                        <p>UI/UX • React</p>
+                    </div>
+                    <div class="work-arrow">↗</div>
+                </div>
+            </div>
+
+            <div class="work-card span-row-2 category-3d" onclick="viewCaseStudy('Neon Cube')">
+                <div class="work-image" style="background-image: url('../Assets/122.jpeg');"></div>
+                <div class="work-overlay">
+                    <div class="work-info">
+                        <h3>Neon Cube</h3>
+                        <p>Blender • Animation</p>
+                    </div>
+                    <div class="work-arrow">↗</div>
+                </div>
+            </div>
+
+            <div class="work-card category-branding" onclick="viewCaseStudy('Eco Brand')">
+                <div class="work-image" style="background-image: url('../Assets/itsyaify.png');"></div>
+                <div class="work-overlay">
+                    <div class="work-info">
+                        <h3>Eco Leaf</h3>
+                        <p>Identity</p>
+                    </div>
+                    <div class="work-arrow">↗</div>
+                </div>
+            </div>
+
+            <div class="work-card category-web" onclick="viewCaseStudy('SaaS Landing')">
+                <div class="work-image" style="background-image: url('../Assets/Lesson 10.png');"></div>
+                <div class="work-overlay">
+                    <div class="work-info">
+                        <h3>Flow SaaS</h3>
+                        <p>Webflow</p>
+                    </div>
+                    <div class="work-arrow">↗</div>
+                </div>
+            </div>
+
+            <div class="work-card span-2 category-3d" onclick="viewCaseStudy('Abstract Motion')">
+                <div class="work-image" style="background-image: url('../Assets/vqw42.png');"></div>
+                <div class="work-overlay">
+                    <div class="work-info">
+                        <h3>Abstract Motion</h3>
+                        <p>Cinema 4D</p>
+                    </div>
+                    <div class="work-arrow">↗</div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="footer-cta glass-panel">
+            <h2>Like what you see?</h2>
+            <p>We are currently accepting new projects for Q1 2026.</p>
+            <a href="pricing.html" class="btn-slide" style="margin-top:20px; display:inline-flex;">
+                <span class="icon-wrapper">➜</span>
+                <span class="text-wrapper">Start Project</span>
+            </a>
+        </section>
+
+    </main>
+
+    <div class="theme-control fixed-bottom-left">
+        <div class="theme-label" id="theme-text">Dark Mode</div>
+        <button id="theme-knob" class="knob-switch"><div class="knob-indicator"></div></button>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>    

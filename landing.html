@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACK³ 3D - Premium Creative Agency</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <!-- Header with navigation -->
+    <header class="main-header navbar">
+        <div class="logo-container logo">
+            <div class="logo-icon"></div> <span class="logo-text">STACK³</span>
+        </div>
+
+        <nav class="nav-links">
+            <a href="services.html">Our Services</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#">FAQ</a>
+            <a href="#">Case Studies</a>
+        </nav>
+
+        <div class="header-cta">
+            <a href="register.html" class="btn-secondary">Got an idea? 👤</a>
+        </div>
+    </header>
+
+    <!-- Theme toggle button -->
+    <div class="theme-control fixed-bottom-left">
+        <div class="theme-label" id="theme-text">Dark Mode</div>
+        <button id="theme-knob" class="knob-switch" aria-label="Toggle Theme">
+            <div class="knob-indicator"></div>
+        </button>
+    </div>
+
+    <!-- Main hero section -->
+    <main class="hero-section">
+        
+        <div class="trust-badge">
+            <div class="avatars">
+                <img src="https://ui-avatars.com/api/?name=A&background=random" alt="User">
+                <img src="https://ui-avatars.com/api/?name=B&background=random" alt="User">
+                <img src="https://ui-avatars.com/api/?name=C&background=random" alt="User">
+            </div>
+            <span>60+ startups & founders chose stack3.solutions</span>
+        </div>
+
+        <h1>Premium <span style="color: var(--primary-orange);">Websites</span> for <br>Startups</h1>
+        <p class="sub-headline">Every business needs a website, and it's <br>never been easier to get one.</p>
+
+        <div class="hero-cta-container">
+            <button class="btn-slide" onclick="sendInquiry()">
+                <span class="icon-wrapper">
+                    ➜ 
+                </span>
+                <span class="text-wrapper">Send an Inquiry</span>
+            </button>
+        </div>
+
+        <div class="status-indicator">
+            <span class="dot"></span> Available in Dec
+        </div>
+
+    </main>
+
+    <!-- Our process section -->
+    <section class="process-section">
+        <div class="process-header">
+            <span class="pill-badge">How We Work</span>
+            <h2>Our Process,<br>Step by Step</h2>
+            <p>From the first step to the final product at your hand!</p>
+        </div>
+
+        <div class="process-steps-container">
+            
+            <div class="dashed-path"></div>
+
+            <div class="step-card card-tilted-left">
+                <div class="pin pin-orange"></div>
+                <span class="step-num num-orange">01</span>
+                <h3>Proposal</h3>
+                <p>Detailed outline of our service tailored for your needs.</p>
+            </div>
+
+            <div class="step-card card-tilted-right">
+                <div class="pin pin-blue"></div>
+                <span class="step-num num-blue">02</span>
+                <h3>Wireframe</h3>
+                <p>Ideation and wireframing to make sure UX flow is perfect.</p>
+            </div>
+
+            <div class="step-card card-tilted-left">
+                <div class="pin pin-purple"></div>
+                <span class="step-num num-purple">03</span>
+                <h3>Development</h3>
+                <p>We build your solution using clean, scalable code.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="../script.js"></script>
+</body>
+</html>

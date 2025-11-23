@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | STACK³ 3D</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="black-theme" id="page-cart">
+
+    <canvas id="gravity-canvas"></canvas>
+    
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <nav class="floating-pill-nav">
+        <a href="index.html" class="pill-logo">
+            <div class="logo-icon-box"><span class="wave-shape"></span></div>
+            <span class="logo-text">STACK³</span>
+        </a>
+        <ul class="pill-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+        <div class="pill-cta">
+            <a href="checkout.html" class="btn-ghost">Let's Talk 👤</a>
+        </div>
+        <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <main class="cart-wrapper">
+
+        <header class="page-header-center">
+            <h1>Checkout</h1>
+            <p>Confirm your order and enter shipping/payment details.</p>
+        </header>
+
+        <div class="cart-container">
+
+            <!-- Order summary -->
+            <div class="cart-items glass-panel">
+                <h3>Your Order</h3>
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-body"></tbody>
+                </table>
+
+                <div id="empty-msg" style="display:none; text-align:center; padding:40px 0;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">🛒</div>
+                    <p>Your cart is empty.</p>
+                    <a href="services.html" class="btn-text">Browse Services</a>
+                </div>
+
+                <div class="cart-actions-row" style="margin-top:20px; display:flex; gap:10px;">
+                    <button class="btn-text" onclick="clearCart()">Clear All</button>
+                    <button class="btn-outline" onclick="closeCheckout()">Close</button>
+                    <button class="btn-subscribe" onclick="initiateCheckout()">Check Out</button>
+                </div>
+            </div>
+
+            <!-- Shipping and payment form -->
+            <aside class="cart-summary glass-panel">
+                <h3>Shipping & Payment</h3>
+
+                <form id="shipping-form">
+                    <div class="form-group">
+                        <label for="ship-name">Full Name</label>
+                        <input type="text" id="ship-name" placeholder="Jane Doe" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ship-email">Email</label>
+                        <input type="email" id="ship-email" placeholder="jane@example.com" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ship-address">Address</label>
+                        <input type="text" id="ship-address" placeholder="Street, Suite" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ship-city">City</label>
+                        <input type="text" id="ship-city" placeholder="City" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ship-postal">Postal Code</label>
+                        <input type="text" id="ship-postal" placeholder="Postal / ZIP" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pay-amount">Amount to Pay</label>
+                        <input type="text" id="pay-amount" readonly />
+                    </div>
+
+                    <div style="display:flex; gap:10px; margin-top:18px;">
+                        <button type="button" class="btn-subscribe full-width" onclick="confirmOrder()">Confirm</button>
+                        <button type="button" class="btn-outline full-width" onclick="cancelCheckout()">Cancel</button>
+                    </div>
+                </form>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <div class="theme-control fixed-bottom-left">
+        <div class="theme-label" id="theme-text">Dark Mode</div>
+        <button id="theme-knob" class="knob-switch"><div class="knob-indicator"></div></button>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart | STACK³ 3D</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="black-theme">
+
+
+    <!-- Particle animation and cursor -->
+    <canvas id="gravity-canvas"></canvas>
+    
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation bar -->
+    <nav class="floating-pill-nav">
+        <a href="index.html" class="pill-logo">
+            <div class="logo-icon-box"><span class="wave-shape"></span></div>
+            <span class="logo-text">STACK³</span>
+        </a>
+        <ul class="pill-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cart.html" class="active">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+        <div class="pill-cta">
+            <a href="checkout.html" class="btn-ghost">Let's Talk 👤</a>
+        </div>
+        <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Shopping cart page -->
+    <main class="cart-wrapper">
+        
+        <header class="page-header-center">
+            <h1>Your Project Scope</h1>
+            <p>Review your selected services before checkout.</p>
+        </header>
+
+        <div class="cart-container">
+            
+            <!-- Cart items table -->
+            <div class="cart-items glass-panel">
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-body">
+                    </tbody>
+                </table>
+                
+                <div id="empty-msg" style="display:none;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">🛒</div>
+                    <p>Your cart is empty.</p>
+                    <a href="services.html" class="btn-text">Browse Services</a>
+                </div>
+
+                <div class="cart-actions-row">
+                    <button class="btn-text" onclick="clearCart()">Clear Cart</button>
+                </div>
+            </div>
+
+            <div class="cart-summary glass-panel">
+                <h3>Order Summary</h3>
+                
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="sub-total">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (15%)</span>
+                    <span id="tax-amt">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Discount</span>
+                    <span id="discount-amt">-$0.00</span>
+                </div>
+                
+                <div class="divider"></div>
+
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="final-total">$0.00</span>
+                </div>
+
+                <button class="btn-subscribe full-width" onclick="goToCheckout()">Proceed to Checkout</button>
+                <button class="btn-outline full-width" onclick="window.location.href='services.html'">Add More Services</button>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="theme-control fixed-bottom-left">
+        <div class="theme-label" id="theme-text">Dark Mode</div>
+        <button id="theme-knob" class="knob-switch"><div class="knob-indicator"></div></button>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>    

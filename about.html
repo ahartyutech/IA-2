@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | STACK³ 3D</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="black-theme">
+
+    <canvas id="gravity-canvas"></canvas>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <nav class="floating-pill-nav glass-effect">
+        <a href="index.html" class="pill-logo">
+            <div class="logo-icon-box"><span class="wave-shape"></span></div>
+            <span class="logo-text">STACK³</span>
+        </a>
+        <ul class="pill-links desktop-only">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+        <div class="pill-cta">
+            <a href="checkout.html" class="btn-ghost">Let's Talk 👤</a>
+        </div>
+        <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <main class="about-wrapper">
+        
+        <!-- About page header -->
+        <header class="about-header">
+            <div class="big-text-layer" style="position:relative; top:0; transform:none; left:0; width:100%; justify-content:center; margin-bottom: 40px;">
+                <span style="font-size: 10vw; text-shadow: 0 0 30px rgba(255,255,255,0.1);">ABOUT</span>
+                <span style="font-size: 10vw; color: var(--primary-orange);">US</span>
+            </div>
+        </header>
+
+        <!-- Profile section -->
+        <section class="about-profile glass-panel">
+            <div class="profile-image-wrapper">
+                <img src="../Assets/Portrait.jpeg" alt="Antwain Harty - 3D Freelance Artist and Web Developer" class="profile-image">
+            </div>
+            
+            <div class="profile-content">
+                <h1>Antwain Harty</h1>
+                <p class="role">3D Freelance Artist & Web Developer</p>
+                
+                <!-- Student information -->
+                <div class="about-details">
+                    <div class="detail-group">
+                        <label class="detail-label">Student ID:</label>
+                        <p class="detail-value">2305810</p>
+                    </div>
+                    
+                    <div class="detail-group">
+                        <label class="detail-label">Academic Level:</label>
+                        <p class="detail-value">3rd Year Student</p>
+                    </div>
+                    
+                    <div class="detail-group">
+                        <label class="detail-label">Institution:</label>
+                        <p class="detail-value">University of Technology (UTECH)</p>
+                    </div>
+                    
+                    <div class="detail-group">
+                        <label class="detail-label">Module Code:</label>
+                        <p class="detail-value">CSCO201</p>
+                    </div>
+                    
+                    <div class="detail-group">
+                        <label class="detail-label">Assignment:</label>
+                        <p class="detail-value">IA#2 - Web Programming</p>
+                    </div>
+                    
+                    <div class="detail-group">
+                        <label class="detail-label">Class Schedule:</label>
+                        <p class="detail-value">Friday 12:50 PM - 1:50 PM</p>
+                    </div>
+                    
+                    <div class="detail-group">
+                        <label class="detail-label">Email:</label>
+                            <a href="mailto:2305810@utech.edu.jm" class="mailto-link">2305810@utech.edu.jm</a>
+                    </div>
+                </div>
+
+                <!-- Contact form -->
+                <div class="contact-section">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions or want to collaborate? Send me an email or fill out the form below.</p>
+                    
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="visitor-name">Your Name *</label>
+                            <input type="text" id="visitor-name" name="visitor-name" required aria-label="Your name">
+                            <span class="error-msg" id="error-name"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="visitor-email">Your Email *</label>
+                            <input type="email" id="visitor-email" name="visitor-email" required aria-label="Your email address">
+                            <span class="error-msg" id="error-email"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="visitor-message">Message *</label>
+                            <textarea id="visitor-message" name="visitor-message" rows="5" required aria-label="Your message"></textarea>
+                            <span class="error-msg" id="error-message"></span>
+                        </div>
+                        
+                        <!-- Submit button -->
+                        <button type="submit" class="btn-slide">
+                            <span class="icon-wrapper">➜</span>
+                            <span class="text-wrapper">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission section -->
+        <section class="about-mission glass-panel">
+            <h2>Our Mission</h2>
+            <p>
+                At STACK³ 3D, we believe that every business deserves a website that stands out. 
+                We combine cutting-edge 3D design with modern web development to create immersive digital experiences 
+                that engage your audience and drive results.
+            </p>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>🎨 Design Excellence</h3>
+                    <p>Crafting visually stunning interfaces with attention to detail and modern aesthetics.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <h3>⚡ Performance</h3>
+                    <p>Building fast, responsive, and accessible websites that work seamlessly across all devices.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <h3>🚀 Innovation</h3>
+                    <p>Implementing cutting-edge technologies including 3D graphics, animations, and interactive experiences.</p>
+                </div>
+                
+                <div class="mission-card">
+                    <h3>💼 Professional Service</h3>
+                    <p>Delivering reliable, professional web solutions tailored to your business needs.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="theme-control fixed-bottom-left">
+        <div class="theme-label" id="theme-text">Dark Mode</div>
+        <button id="theme-knob" class="knob-switch"><div class="knob-indicator"></div></button>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

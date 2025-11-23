@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | STACK³ 3D</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="black-theme">
+
+
+    <!-- Particle animation and cursor -->
+    <canvas id="gravity-canvas"></canvas>
+    
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation bar -->
+    <nav class="floating-pill-nav">
+        <a href="index.html" class="pill-logo">
+            <div class="logo-icon-box"><span class="wave-shape"></span></div>
+            <span class="logo-text">STACK³</span>
+        </a>
+        <ul class="pill-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="works.html">Works</a></li>
+            <li><a href="pricing.html" class="active">Pricing</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+        <div class="pill-cta">
+            <a href="checkout.html" class="btn-ghost">Let's Talk 👤</a>
+        </div>
+        <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+
+    <!-- Pricing page content -->
+    <main class="scroll-container">
+        <section class="fullscreen-section black-theme" style="height: auto; min-height: 100vh; padding-top: 120px;">
+            
+            <div class="technical-grid">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+            </div>
+
+            <div class="content-layer" style="display: block; height: auto;">
+                
+                <div class="pricing-header-center">
+                    <div class="aset-badge">Pricing Plans</div>
+                    <h1>Select the right plan for<br>your business needs.</h1>
+                    
+                    <div class="pricing-toggle-wrapper">
+                        <div class="toggle-container glass-effect" id="toggle-container">
+                            <div class="glider"></div>
+                            <label class="toggle-option active" id="btn-monthly" onclick="setBilling('monthly')">Monthly</label>
+                            <label class="toggle-option" id="btn-yearly" onclick="setBilling('yearly')">Yearly</label>
+                        </div>
+                        <span class="badge-save">Save 20%</span>
+                    </div>
+                </div>
+
+                <div class="aset-pricing-grid">
+                    
+                    <div class="aset-card glass-panel">
+                        <div class="aset-header">
+                            <h3>Essentials</h3>
+                            <p>For early-stage startups.</p>
+                        </div>
+                        <div class="aset-price-box">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="1,900" data-yearly="19,000">1,900</span>
+                            <span class="period">/mo</span>
+                        </div>
+                        <div class="divider"></div>
+                        <ul class="aset-features">
+                            <li><span>✔</span> One request at a time</li>
+                            <li><span>✔</span> Average 48h delivery</li>
+                            <li><span>✔</span> Unlimited brands</li>
+                            <li><span>✔</span> Webflow development</li>
+                        </ul>
+                        <button class="btn-outline full-width" onclick="addToCart('plan-essentials', 1900)">Add to Cart</button>
+                    </div>
+
+                    <div class="aset-card glass-panel popular-card">
+                        <div class="popular-tag">Most Popular</div>
+                        <div class="aset-header">
+                            <h3>Pro Growth</h3>
+                            <p>For scaling companies.</p>
+                        </div>
+                        <div class="aset-price-box">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="3,500" data-yearly="35,000">3,500</span>
+                            <span class="period">/mo</span>
+                        </div>
+                        <div class="divider"></div>
+                        <ul class="aset-features">
+                            <li><span>✔</span> <strong>Two</strong> requests at a time</li>
+                            <li><span>✔</span> Priority 24h delivery</li>
+                            <li><span>✔</span> Unlimited stock photos</li>
+                            <li><span>✔</span> Framer & Webflow Dev</li>
+                            <li><span>✔</span> Dedicated Project Manager</li>
+                        </ul>
+                        <button class="btn-subscribe full-width" onclick="addToCart('plan-pro', 3500)">Add to Cart</button>
+                    </div>
+
+                    <div class="aset-card glass-panel">
+                        <div class="aset-header">
+                            <h3>Enterprise</h3>
+                            <p>For large organizations.</p>
+                        </div>
+                        <div class="aset-price-box">
+                            <span class="currency">$</span>
+                            <span class="amount" data-monthly="5,900" data-yearly="59,000">5,900</span>
+                            <span class="period">/mo</span>
+                        </div>
+                        <div class="divider"></div>
+                        <ul class="aset-features">
+                            <li><span>✔</span> <strong>Four</strong> requests at a time</li>
+                            <li><span>✔</span> Real-time Slack support</li>
+                            <li><span>✔</span> Custom 3D Assets</li>
+                            <li><span>✔</span> Full App Development</li>
+                            <li><span>✔</span> Monthly Strategy Call</li>
+                        </ul>
+                        <button class="btn-outline full-width" onclick="addToCart('plan-enterprise', 5900)">Add to Cart</button>
+                    </div>
+
+                </div>
+                
+                <div class="pricing-footer-text">
+                    <p>Prices include all taxes. Pause or cancel anytime.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div class="theme-control fixed-bottom-left">
+        <div class="theme-label" id="theme-text">Dark Mode</div>
+        <button id="theme-knob" class="knob-switch"><div class="knob-indicator"></div></button>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>    
